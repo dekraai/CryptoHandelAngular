@@ -1,0 +1,24 @@
+<p>crypto-coin works!</p>
+<h1 class="text-center"> CryptoCoins</h1>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">name</th>
+                    <th scope="col">symbol</th>
+                    <th scope="col">slug</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let cryptocoin of allCoins">
+                <tr class="table-active">
+                    <th scope="row">{{cryptocoin.name}}</th>
+                    <td>{{cryptocoin.symbol}}</td>
+                    <td>{{cryptocoin.slug}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
