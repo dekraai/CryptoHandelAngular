@@ -8,13 +8,15 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CryptoCoinComponent } from './Content/crypto-coin/crypto-coin.component';
+import { CryptoKoersComponent } from './Content/crypto-koers/crypto-koers.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CryptoCoinComponent
+    CryptoCoinComponent,
+    CryptoKoersComponent
   ],
   imports: [
     BrowserModule,

@@ -12,4 +12,8 @@ export class CryptoCoinService {
   getAllCoins(): Observable<any> {
     return this.httpClient.get('http://localhost:8080/cryptocoins');
   }
+
+  getOneCrypto(id: string): Observable<any> {
+    return this.httpClient.get('http://localhost:8080/cryptocoins/one/'+ id);
+  }
 }

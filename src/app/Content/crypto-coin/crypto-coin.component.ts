@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CryptoCoin } from 'src/app/DTO/crypto-coin';
 import { CryptoCoinService } from 'src/app/Service/crypto-coin.service';
 
@@ -12,7 +13,9 @@ export class CryptoCoinComponent implements OnInit {
   allCoins: CryptoCoin[] = [];
   
 
-  constructor(private cryptoService: CryptoCoinService) { 
+  constructor(
+    private cryptoService: CryptoCoinService,
+    private router: Router) { 
     this.getAllCoins();
   }
 
@@ -24,4 +27,9 @@ export class CryptoCoinComponent implements OnInit {
       this.allCoins = cryptoCoins;
     });
   }
+
+  goToCoin(coin: CryptoCoin) {
+    this.router.navigate(['cryptokoers', coin.coinId])
+  }
+  
 }

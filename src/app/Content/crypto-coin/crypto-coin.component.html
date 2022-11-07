@@ -12,8 +12,8 @@
                 </tr>
             </thead>
             <tbody *ngFor="let cryptocoin of allCoins">
-                <tr class="table-active">
-                    <th scope="row">{{cryptocoin.name}}</th>
+                <tr class="table-active" >
+                    <th scope="row" (click)="goToCoin(cryptocoin)">{{cryptocoin.name}}</th>
                     <td>{{cryptocoin.symbol}}</td>
                     <td>{{cryptocoin.slug}}</td>
                 </tr>
