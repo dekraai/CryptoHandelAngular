@@ -20,9 +20,9 @@ export class CryptoKoersComponent implements OnInit {
     private route: ActivatedRoute,
     private koersService: KoersService,
     private cryptoService: CryptoCoinService) {
-    let coin = this.route.snapshot.paramMap.get('coin');
+    let coin = this.route.snapshot.paramMap.get('id');
     this.getOneCoin(coin!);
-    this.getKoersenFromCoin(this.cryptoCoin);    
+    //this.getKoersenFromCoin(this.cryptoCoin);    
    }
 
   ngOnInit(): void {
@@ -31,10 +31,11 @@ export class CryptoKoersComponent implements OnInit {
   getOneCoin(coin: string) {
     this.cryptoService.getOneCrypto(coin).subscribe((crypt: CryptoCoin) =>
     this.cryptoCoin = crypt)
+    this.getKoersenFromCoin(coin);    
   };
 
-  getKoersenFromCoin(cryptoC: CryptoCoin) {
-    this.koersService.getKoersenFromOneCoin(this.cryptoCoin).subscribe((koersarray: Koers[]) =>
+  getKoersenFromCoin(cryptoC: string) {
+    this.koersService.getKoersenFromOneCoin(cryptoC).subscribe((koersarray: Koers[]) =>
     this.koersen = koersarray
     )};
 

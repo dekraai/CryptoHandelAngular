@@ -14,7 +14,7 @@ export class KoersService {
     return this.httpClient.get('http://localhost:8080/koersen/all');
   }
 
-  getKoersenFromOneCoin(crypto: CryptoCoin): Observable<any> {
-    return this.httpClient.get('http://localhost:8080/koersen/coin/all')
+  getKoersenFromOneCoin(crypto: string): Observable<any> {
+    return this.httpClient.get('http://localhost:8080/koersen/coin/all/'+ crypto);
   }
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: AppComponent},
   {path: 'login', component: LoginComponent},
   {path: 'crypto', component: CryptoCoinComponent},
-  {path: 'cryptokoers', component: CryptoKoersComponent},
+  {path: 'cryptokoers/:id', component: CryptoKoersComponent},
   {path: '*', component: AppComponent},
   {path: '**', component: AppComponent}
 ];
