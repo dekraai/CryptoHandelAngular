@@ -9,6 +9,10 @@ import { AuthInterceptor } from './auth-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CryptoCoinComponent } from './Content/crypto-coin/crypto-coin.component';
 import { CryptoKoersComponent } from './Content/crypto-koers/crypto-koers.component';
+import { HeaderComponent } from './Content/header/header.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+
+
 
 
 @NgModule({
@@ -16,13 +20,15 @@ import { CryptoKoersComponent } from './Content/crypto-koers/crypto-koers.compon
     AppComponent,
     LoginComponent,
     CryptoCoinComponent,
-    CryptoKoersComponent
+    CryptoKoersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleChartsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,

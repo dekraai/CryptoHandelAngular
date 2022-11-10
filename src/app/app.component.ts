@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChartType } from 'angular-google-charts';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CryptoFrontAngular';
+
+  
 }
