@@ -11,6 +11,7 @@ import { CryptoCoinComponent } from './Content/crypto-coin/crypto-coin.component
 import { CryptoKoersComponent } from './Content/crypto-koers/crypto-koers.component';
 import { HeaderComponent } from './Content/header/header.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -34,7 +35,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
     {provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true},
-      AutGuardService
+      AutGuardService,
+      DatePipe
   ],
   bootstrap: [AppComponent]
 })

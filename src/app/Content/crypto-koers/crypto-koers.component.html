@@ -1,13 +1,12 @@
 <p>crypto-koers works!</p>
 <h1 class="text-center"> {{cryptoCoin.name}}</h1>
-<google-chart #chart
-   [title]="title"
-   [type]="type"
-   [data]="data"   
-   [columns]="columnNames"
-   [width]="width"
-   [height]="height">
-</google-chart>
+<div class="row">
+    <div class="col-sm-1 "></div>
+    <div class="col-sm-10">
+        <google-chart #chart [title]="title" [type]="type" [data]="data" [columns]="columnNames" [options]="options" [width]="width" [height]="height"></google-chart>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
 <h2 class="text-center">text</h2>
 <div class="row">
     <div class="col-sm-3"></div>
@@ -31,4 +30,3 @@
     </div>
     <div class="col-sm-3"></div>
 </div>
-<button href="https://portal.mikrocentrum.nl/nl/aanmaken-formulier-prs/evenement-sjabloon-01-voor-exposanten?source=5285">Register Now</button>
