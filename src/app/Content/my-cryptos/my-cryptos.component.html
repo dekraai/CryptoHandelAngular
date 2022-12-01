@@ -1,5 +1,5 @@
 <h1 class="text-center">My Crypto's</h1>
-<button (click)="changeVisibilityAdd()">Add Trigger</button><br/>
+<button (click)="changeVisibilityAdd()">Add Crypto</button><br/>
 
 <div *ngIf="showAdd">
     <div class="row">
@@ -21,13 +21,13 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <strong>Aankoop Koers</strong>
-                            <input class="form-control" type="number" name="AankoopKoers" formControlName="cryptoKoersBought" placeholder="Aankoop Koers">
+                            <input class="form-control" type="number" name="AankoopKoers" formControlName="cryptoKoersBought" placeholder="Aankoop Koers" [value]="aankoopKoers">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <strong>Aankoop hoeveelheid</strong>
-                            <input class="form-control" type="number" name="AankoopHoeveelheid" formControlName="boughtInEuro" placeholder="aankoop hoeveelheid">
+                            <strong>Aankoop hoeveelheid in €uro</strong>
+                            <input class="form-control" type="number" name="AankoopHoeveelheid" formControlName="boughtInEuro" placeholder="aankoop hoeveelheid" [value]="aankoopHoeveelheid">
                         </div>
                     </div>
                     <br/>
@@ -44,12 +44,11 @@
     <div class="col-sm-2"></div>
         <div class="col-sm-8">
             <h2 class="text-center"> All Crypto's</h2>            
-            <table class="span text-center">
+            <table class="text-center">
                 <thead>
                     <tr>
                         <th>myCrypto Id</th>
                         <th>cryptoId</th>
-                        <th>userId</th>
                         <th>Koers Bought</th>
                         <th>Waarde in Euro</th>
                     </tr>
@@ -57,10 +56,9 @@
                 <tbody>
                     <tr *ngFor="let mc of allMyCryptos">
                         <td>{{mc.myCryptoId}}</td>
-                        <td>{{mc.cryptoId}}</td>
-                        <td>{{mc.userId}}</td>
-                        <td>{{mc.cryptoKoersBought}}</td>
-                        <td>{{mc.worthInEur}}</td>
+                        <td>{{getCoin(mc.cryptoId).name}}</td>
+                        <td>€{{mc.cryptoKoersBought}}</td>
+                        <td>€{{mc.worthInEur}}</td>
                     </tr>
                 </tbody>
             </table>

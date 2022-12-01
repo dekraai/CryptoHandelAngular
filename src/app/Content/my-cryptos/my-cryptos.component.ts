@@ -24,6 +24,9 @@ export class MyCryptosComponent implements OnInit {
   newMyCrypto: NewMyCrypto = new NewMyCrypto;
   allMyCryptos: MyCrypto[] = [];
   showAdd: boolean = false;
+  aankoopKoers: number = 0;
+  aankoopHoeveelheid: number = 0;
+  selectedCrypto: CryptoCoin = new CryptoCoin;
 
   constructor(private myCryptoService: MyCryptoService,
     private cryptocoinService: CryptoCoinService) {
@@ -54,6 +57,14 @@ export class MyCryptosComponent implements OnInit {
     }
   }
 
+  getCoin(id: number):CryptoCoin {
+    let cc = new CryptoCoin;
+    if (this.allCryptoCoins != undefined) {
+      cc = this.allCryptoCoins.find(myObj => myObj.coinId == id)!;
+    }
+     return cc;
+  }
+
   onSubmit() {
     let cryptoForm = this.newMyCryptoForm.value;
     this.newMyCrypto.cryptoId = cryptoForm.cryptoId!
@@ -62,6 +73,7 @@ export class MyCryptosComponent implements OnInit {
 
     this.myCryptoService.saveMyCrypto(this.newMyCrypto).subscribe((myCrypto: MyCrypto) => {
       if (myCrypto.cryptoId == this.newMyCrypto.cryptoId) {
+this.newMyCryptoForm.reset();
         this.getMyCryptos();
       }
     })
