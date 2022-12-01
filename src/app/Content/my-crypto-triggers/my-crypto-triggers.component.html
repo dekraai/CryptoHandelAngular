@@ -1,0 +1,72 @@
+<p>my-crypto-triggers works!</p>
+<h1 class="text-center">Triggers</h1>
+<button (click)="changeVisibilityAdd()">Add Trigger</button>
+<div *ngIf="showAdd">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form [formGroup]="newTriggerForm" (ngSubmit)="onSubmit()">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h2> New Trigger </h2>
+                            <label><strong>Crypto</strong>
+                                <select class="form-control" formControlName="cryptoCoin">
+                                   
+                                    <option selected *ngFor="let crypto of allCryptos" [ngValue]="crypto.coinId">{{crypto.name}}</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <strong>Verkoop Koers</strong>
+                            <input class="form-control" type="number" name="verkoopKoers" formControlName="verkoopWaarde" placeholder="verkoop Koers">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <strong>Verkoop hoeveelheid</strong>
+                            <input class="form-control" type="number" name="verkoopHoeveelheid" formControlName="verkoopHoeveelheid" placeholder="verkoop hoeveelheid">
+                        </div>
+                    </div>
+                    <br/>
+                    <button type="submit" [disabled]="!newTriggerForm.valid">Submit</button>
+                </fieldset>
+            </form>
+            <br/>
+        
+        
+        </div>
+        <div class="col-sm-2"></div>
+    </div> 
+
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <h2> All Triggers</h2><br/>
+        
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>crypto name</th>
+                    <th>sell price</th>
+                    <th>sell value</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let trigger of triggers">
+                <tr class="table-active">
+                    <th >{{trigger.cryptoId}}</th>
+                    <td>{{trigger.triggerValue}}</td>
+                    <td>{{trigger.amountInEur}}</td>
+                    <td (click)="goToTrigger(trigger)">edit trigger</td>
+                    <td>Delete trigger</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-2"></div>
+</div>

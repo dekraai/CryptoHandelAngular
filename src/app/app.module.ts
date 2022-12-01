@@ -12,6 +12,8 @@ import { CryptoKoersComponent } from './Content/crypto-koers/crypto-koers.compon
 import { HeaderComponent } from './Content/header/header.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { DatePipe } from '@angular/common';
+import { MyCryptosComponent } from './Content/my-cryptos/my-cryptos.component';
+import { MyCryptoTriggersComponent } from './Content/my-crypto-triggers/my-crypto-triggers.component';
 
 
 
@@ -22,7 +24,9 @@ import { DatePipe } from '@angular/common';
     LoginComponent,
     CryptoCoinComponent,
     CryptoKoersComponent,
-    HeaderComponent
+    HeaderComponent,
+    MyCryptosComponent,
+    MyCryptoTriggersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 <p>crypto-coin works!</p>
 <h1 class="text-center"> CryptoCoins</h1>
+<button>Refresh all Coins</button>
 <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
@@ -9,13 +10,15 @@
                     <th scope="col">name</th>
                     <th scope="col">symbol</th>
                     <th scope="col">slug</th>
+                    <th scope="col">ID</th>
                 </tr>
             </thead>
             <tbody *ngFor="let cryptocoin of allCoins">
                 <tr class="table-active" >
-                    <th scope="row" (click)="goToCoin(cryptocoin)">{{cryptocoin.name}}</th>
+                    <td scope="row" (click)="goToCoin(cryptocoin)">{{cryptocoin.name}}</td>
                     <td>{{cryptocoin.symbol}}</td>
                     <td>{{cryptocoin.slug}}</td>
+                    <td>{{cryptocoin.coinId}}</td>
                 </tr>
             </tbody>
         </table>

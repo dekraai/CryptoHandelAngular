@@ -36,8 +36,10 @@ export class CryptoCoinComponent implements OnInit {
     this.koersService.getKoersenFromOneCoin(coin.coinId!.toString()).subscribe((koersarray: Koers[]) =>
       
       this.setSessionStorage(JSON.stringify(koersarray), coin)
-    )
-    
+    )    
+  }
+
+  RefreshCoins(){
     
   }
 

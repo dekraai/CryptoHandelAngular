@@ -1,19 +1,17 @@
 <h1 class="text-center"> Cryptohandel App</h1>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" routerLink="/home" routerLinkActive="active">Spellen App</a>
+    <a class="navbar-brand" routerLink="/crypto" routerLinkActive="active">Cryptohandel</a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/crypto" routerLinkActive="active">Crypto's</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/koersen" routerLinkActive="active">Koersen</a>
+          <a class="nav-link" routerLink="/mycryptos" routerLinkActive="active">Mijn Crypto's</a>
         </li>
-        <div *ngIf="isLoggedIn;">
-            <li class="nav-item">
-            <a class="nav-link" routerLink="/rounds" routerLinkActive="active">Mijn Koersen</a>
-            </li>
-        </div>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="/mytriggers" routerLinkActive="active">Mijn Triggers</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/login" routerLinkActive="active">login</a>
         </li>

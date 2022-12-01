@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.authservice.login(this.loginAccount).subscribe( (response: any) => {
       console.log(response!); 
       sessionStorage.setItem('token', response.token!); 
-      this.router.navigate(['/players']); 
+      this.router.navigate(['']); 
     });
   }
 }
