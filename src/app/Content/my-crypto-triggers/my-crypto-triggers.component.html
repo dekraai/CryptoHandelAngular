@@ -59,7 +59,7 @@
             </thead>
             <tbody *ngFor="let trigger of triggers">
                 <tr class="table-active">
-                    <th >{{trigger.cryptoId}}</th>
+                    <th >{{getCoin(trigger.cryptoId).name}}</th>
                     <td>{{trigger.triggerValue}}</td>
                     <td>{{trigger.amountInEur}}</td>
                     <td (click)="goToTrigger(trigger)">edit trigger</td>

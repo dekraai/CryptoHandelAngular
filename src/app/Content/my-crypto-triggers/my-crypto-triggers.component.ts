@@ -67,6 +67,14 @@ export class MyCryptoTriggersComponent implements OnInit {
     })
   }
 
+  getCoin(id: number):CryptoCoin {
+    let cc = new CryptoCoin;
+    if (this.allCryptos != undefined) {
+      cc = this.allCryptos.find(myObj => myObj.coinId == id)!;
+    }
+     return cc;
+  }
+
   goToTrigger(trigger: CryptoTrigger) {
     this.showAdd = true;
     
